@@ -47,9 +47,9 @@ main,.footer{position:relative;z-index:1}.section{padding-block:112px}
 .hero{min-height:100vh;display:flex;align-items:center;padding-top:100px;padding-bottom:32px;overflow:hidden}
 .hero-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:64px;align-items:center}
 .availability{display:flex;align-items:center;gap:12px;width:fit-content;margin-bottom:20px;color:var(--blue);font-size:14px;font-weight:700;letter-spacing:2px}
-.availability-text{display:inline-block;color:var(--light-blue);background:linear-gradient(110deg,#edc98e 0%,#d4a96f 35%,#fffdf8 50%,#edc98e 65%,#d4a96f 100%);background-size:220% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:availability-shimmer 4.2s ease-in-out infinite}
+.availability-text{display:inline-block;color:var(--light-blue);background:linear-gradient(110deg,#edc98e 0%,#d4a96f 35%,#fffdf8 50%,#edc98e 65%,#d4a96f 100%);background-size:220% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:availability-shimmer 5s ease-in-out infinite}
 .availability-indicator{position:relative;display:inline-grid;place-items:center;width:12px;height:12px;flex:0 0 12px;border-radius:50%;background:var(--light-blue);box-shadow:0 0 12px #edc98e80}
-.availability-indicator:after{content:"";position:absolute;inset:-5px;border:1px solid #edc98e8c;border-radius:50%;animation:availability-pulse 2.2s ease-out infinite}
+.availability-indicator:after{content:"";position:absolute;inset:-5px;border:1px solid #edc98e8c;border-radius:50%;animation:availability-pulse 2.5s ease-out infinite}
 @keyframes availability-shimmer{0%{background-position:100% 0}48%,100%{background-position:-120% 0}}
 @keyframes availability-pulse{0%{transform:scale(.55);opacity:.9}75%,100%{transform:scale(1.55);opacity:0}}
 .hero h1{margin-bottom:16px;line-height:1;color:#fffdf8}
@@ -57,11 +57,11 @@ main,.footer{position:relative;z-index:1}.section{padding-block:112px}
 .hero-signature{display:block;width:min(100%,420px);height:auto;overflow:visible}
 /* The mask follows each calligraphic glyph, revealing white ink in sequence.
    Completed letters are the default, including when animations are disabled. */
-.signature-ink{stroke-dasharray:1;stroke-dashoffset:0;fill-opacity:1;animation:signature-write 1.15s cubic-bezier(.4,0,.2,1) var(--ink-delay) both}
+.signature-ink{stroke-dasharray:1;stroke-dashoffset:0;fill-opacity:1;animation:signature-write .8s cubic-bezier(.4,0,.2,1) var(--ink-delay) both}
 @keyframes signature-write{
   0%{stroke-dashoffset:1;fill-opacity:0;opacity:0}
-  1%{opacity:1}
-  78%{stroke-dashoffset:0;fill-opacity:0}
+  8%{opacity:1}
+  82%{stroke-dashoffset:0;fill-opacity:0}
   100%{stroke-dashoffset:0;fill-opacity:1}
 }
 .job-title{display:flex;align-items:center;gap:12px;height:32px;margin-bottom:18px;font-size:24px;font-weight:600;color:var(--blue)}

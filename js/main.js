@@ -163,7 +163,7 @@
       const word = roles[roleIndex];
       position += removing ? -1 : 1;
       roleElement.textContent = word.slice(0, position);
-      let delay = removing ? 45 : 80;
+      let delay = removing ? 55 : 80;
       if (position === 0) { removing = false; roleIndex = (roleIndex + 1) % roles.length; delay = 250; }
       else if (position === word.length && !removing) { removing = true; delay = 2200; }
       timer = setTimeout(tick, delay);
