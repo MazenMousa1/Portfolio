@@ -2,7 +2,7 @@
 window.PORTFOLIO_DATA = {
   profile: {
     name: "Mazen Mahmoud Mousa",
-    photo: "assets/images/profile.png", // Replace this path to change your portrait.
+    photo: "assets/images/profile.jpg", // Replace this path to change your portrait.
     university: "Al Ryada University",
     universityLogo: "assets/images/alryada-university-logo.png",
     studyDates: "2024 – 2028 (Expected)",
@@ -13,7 +13,7 @@ window.PORTFOLIO_DATA = {
     github: "https://github.com/MazenMousa1",
     linkedin: "https://www.linkedin.com/in/mazen-mahmoud-276077333/?isSelfProfile=true",
     whatsapp: "01096275848",
-    cv: ""
+    cv: "assets/cv/Mazen-Mahmoud-Mousa-CV.docx"
   },
   skills: [
     {name:"C#",icon:"cs",priority:"core"},

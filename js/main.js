@@ -41,14 +41,6 @@
   const icon = (name) => '<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (paths[name] || paths.code) + '</svg>';
   const accent = (index) => index % 2 ? "#8b5cf6" : "#3b82f6";
   const unavailableButton = (label, message, iconName, className = "button ghost") => '<button type="button" class="' + className + '" data-notice="' + escape(message) + '">' + (iconName ? icon(iconName) : "") + escape(label) + icon("chevron-right") + "</button>";
-  const projectButton = (value) => {
-    const url = httpUrl(value);
-    const contents = icon("github") + "Open Repository" + icon("arrow-up-right");
-    return url
-      ? '<a class="button repo-button" href="' + escape(url) + '" target="_blank" rel="noopener noreferrer">' + contents + '</a>'
-      : '<button type="button" class="button repo-button" data-notice="The repository link will be added soon.">' + contents + '</button>';
-  };
-
   $("skills-grid").innerHTML = data.skills.map((skill) => {
     const classes = ["skill-tile", skill.priority === "core" ? "is-core" : skill.priority === "tool" ? "is-tool" : "is-standard"];
     if (!skill.icon) classes.push("is-text-only");
@@ -58,7 +50,7 @@
     return '<article class="' + classes.join(" ") + '">' + logo + '<span>' + escape(skill.name) + "</span></article>";
   }).join("");
   $("services-grid").innerHTML = data.services.map((service, index) => '<article class="card service-card" style="--card-accent:' + accent(index) + '"><div class="icon-box">' + icon(service.icon) + '</div><div><h3>' + escape(service.title) + "</h3><p>" + escape(service.description) + "</p></div></article>").join("");
-  $("projects-grid").innerHTML = data.projects.map((project, index) => '<article class="card project-card" style="--card-accent:' + accent(index) + '"><div class="project-category">' + escape(project.category) + '</div><h3>' + escape(project.title) + '</h3><p class="project-description">' + escape(project.description) + '</p><div class="project-tags">' + project.tags.map((tag) => "<span>" + escape(tag) + "</span>").join("") + '</div><div class="project-actions">' + projectButton(project.github) + (httpUrl(project.live) ? '<a class="button ghost" href="' + escape(httpUrl(project.live)) + '" target="_blank" rel="noopener noreferrer">Live Demo ' + icon("arrow-up-right") + "</a>" : "") + "</div></article>").join("");
+  $("projects-grid").innerHTML = data.projects.map((project, index) => '<article class="card project-card" style="--card-accent:' + accent(index) + '"><div class="project-category">' + escape(project.category) + '</div><h3>' + escape(project.title) + '</h3><p class="project-description">' + escape(project.description) + '</p><div class="project-tags">' + project.tags.map((tag) => "<span>" + escape(tag) + "</span>").join("") + "</div></article>").join("");
   $("awards-list").innerHTML = data.achievements.map((award) => {
     const url = httpUrl(award.url);
     return '<' + (url ? 'a href="' + escape(url) + '" target="_blank" rel="noopener noreferrer"' : "article") + ' class="card award-card' + (award.placeholder ? " is-placeholder" : "") + '" style="--card-accent:' + escape(award.color) + '"><div class="icon-box">' + icon(award.icon) + '</div><div class="award-body"><div class="award-label">' + escape(award.label) + "</div><h3>" + escape(award.title) + "</h3><p>" + escape(award.description) + "</p>" + (award.stat ? '<span class="award-stat">' + escape(award.stat) + "</span>" : "") + '</div><span class="award-arrow">' + icon("arrow-up-right") + "</span></" + (url ? "a" : "article") + ">";
