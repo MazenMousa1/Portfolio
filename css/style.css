@@ -84,7 +84,7 @@ main,.footer{position:relative;z-index:1}.section{padding-block:112px}
 .portrait-glow{position:absolute;inset:20px;border-radius:40px;background:var(--gradient);opacity:.15;filter:blur(50px)}
 .hero-portrait:before{content:'';position:absolute;width:400px;height:400px;top:-180px;left:-150px;background:radial-gradient(circle,#3b82f622,transparent 70%);filter:blur(40px);pointer-events:none}
 .portrait-frame{position:relative;border-radius:40px;overflow:hidden;border:1px solid #edc98e55;background:var(--bg);box-shadow:0 25px 50px -12px #000a,0 0 28px #d4a96f14}
-.portrait-frame img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
+.portrait-frame img{display:block;width:100%;height:auto;aspect-ratio:1275/1600;object-fit:contain}
 
 /* Shared headings and cards */
 .badge{display:inline-flex;align-items:center;gap:12px;padding:8px 20px;border-radius:100px;background:#3b82f61a;color:var(--light-blue);font-size:12.8px;font-weight:700;letter-spacing:1.5px;margin-bottom:24px}
